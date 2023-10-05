@@ -1,2 +1,0 @@
-# terraform-study
-Terraform TEST
