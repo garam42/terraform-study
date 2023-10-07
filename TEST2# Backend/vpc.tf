@@ -26,6 +26,26 @@ resource "aws_subnet" "kgr-2-public-2c" {
   }
 }
 
+resource "aws_subnet" "kgr-2-private-2a" {
+  vpc_id            = aws_vpc.kgr-2-vpc.id
+  cidr_block        = "10.20.3.0/24"
+  availability_zone = "ap-northeast-2a"
+
+  tags = {
+    Name = "kgr-2-private-2a"
+  }
+}
+
+resource "aws_subnet" "kgr-2-private-2c" {
+  vpc_id            = aws_vpc.kgr-2-vpc.id
+  cidr_block        = "10.20.4.0/24"
+  availability_zone = "ap-northeast-2c"
+
+  tags = {
+    Name = "kgr-2-private-2c"
+  }
+}
+
 resource "aws_internet_gateway" "kgr-2-igw" {
   vpc_id = aws_vpc.kgr-2-vpc.id
   tags = {
